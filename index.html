@@ -6,315 +6,296 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Good Food Restuarent</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      /* =======================
+   RESET & GLOBAL
+======================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    font-family: 'Work Sans', sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =======================
+   NAVBAR
+======================= */
+#navbar {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    background-color: rgba(4, 4, 4, 0.5);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    color: white;
+}
+
+#navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+/* =======================
+   BANNER SECTION
+======================= */
+.banner {
+    min-height: 919px;
+    padding-top: 264px;
+    background: linear-gradient(rgba(4,4,4,0.5), rgba(4,4,4,0.5)),
+                url(./asset/hero-bg.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1023px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#banner_sub_heading {
+    color: white;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+#banner_heading {
+    color: white;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 80px;
+}
+
+#banner_paragraph {
+    color: white;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+#btn {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+#banner_button {
+    width: 282px;
+    height: 66px;
+    background-color: rgba(82, 195, 3, 1);
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* =======================
+   ABOUT US SECTION
+======================= */
+.about-us-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(227, 233, 233);
+}
+
+.about-us-image,
+.about-us-content {
+    width: 50%;
+}
+
+.about-us-image img {
+    width: 100%;
+}
+
+#about_text {
+    width: 90%;
+    max-width: 805px;
+    margin: 120px auto 0;
+    text-align: center;
+}
+
+#about_sub_heading {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+#about_paragraph {
+    font-size: 24px;
+    margin-top: 24px;
+}
+
+#follow_text {
+    text-align: center;
+    font-size: 32px;
+    padding: 30px 0;
+}
+
+#social_icon {
+    width: 260px;
+    margin: 32px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* =======================
+   CARD SECTION
+======================= */
+.card-box {
+    padding: 100px 0;
+}
+
+.card-box-container {
+    width: 90%;
+    max-width: 1320px;
+    margin: auto;
+}
+
+.card-box-content {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+#card-box-content-paragraph {
+    font-size: 24px;
+    opacity: 0.6;
+}
+
+#card-box-content-heading {
+    font-size: 48px;
+    line-height: 64px;
+}
+
+.card-box-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+#card1 {
+    width: 100%;
+    max-width: 424px;
+    text-align: center;
+}
+
+#card1-content {
+    margin-top: 32px;
+}
+
+#card1-btn {
+    background-color: rgba(82, 195, 3, 0.15);
+    border: none;
+    padding: 10px 16px;
+    font-size: 20px;
+}
+
+#card1_heading {
+    font-size: 40px;
+    margin-top: 32px;
+}
+
+#card1_paragraph {
+    font-size: 18px;
+    opacity: 0.7;
+}
+
+/* =======================
+   TABLET RESPONSIVE
+======================= */
+@media (max-width: 768px) {
+
+    #navbar ul {
+        gap: 20px;
+    }
+
+    .banner {
+        padding-top: 180px;
+        min-height: auto;
+        padding-bottom: 80px;
+    }
+
+    #banner_heading {
+        font-size: 36px;
+        line-height: 46px;
+    }
+
+    #banner_sub_heading {
+        font-size: 22px;
+    }
+
+    #banner_paragraph {
+        font-size: 16px;
+    }
+
+    .about-us-image,
+    .about-us-content {
+        width: 100%;
+    }
+
+    #about_sub_heading {
+        font-size: 32px;
+        line-height: 42px;
+    }
+
+    #about_paragraph {
+        font-size: 18px;
+    }
+
+    #card-box-content-heading {
+        font-size: 32px;
+        line-height: 42px;
+    }
+}
+
+/* =======================
+   MOBILE RESPONSIVE
+======================= */
+@media (max-width: 480px) {
+
+    #navbar {
+        padding: 0 20px;
+    }
+
+    #navbar ul {
+        font-size: 16px;
+    }
+
+    #banner_heading {
+        font-size: 28px;
+        line-height: 38px;
+    }
+
+    #banner_button {
+        width: 100%;
+    }
+
+    #btn {
+        width: 100%;
+    }
+}
 
-        body {
-            width: 1920px;
-            margin: 0 auto;
-        }
-
-        .banner {
-
-            height: 919px;
-            padding-top: 264px;
-            background: linear-gradient(rgba(4, 4, 4, 0.5), rgba(4, 4, 4, 0.5)), url(./asset/hero-bg.png);
-            background-size: cover;
-            background-position: center;
-
-
-        }
-
-        .container {
-            width: 1023px;
-            height: 392px;
-            margin: 0 auto;
-
-        }
-
-
-
-        #banner_sub_heading {
-            color: rgba(255, 255, 255, 1);
-            font-family: 'Work Sans', sans-serif;
-            font-size: 32px;
-            font-weight: 600;
-            line-height: 38px;
-            letter-spacing: 0%;
-            text-align: center;
-        }
-
-
-        #banner_heading {
-            color: rgba(255, 255, 255, 1);
-            font-family: 'Work Sans', sans-serif;
-            font-size: 60px;
-            font-weight: 700;
-            line-height: 80px;
-            letter-spacing: 0%;
-            text-align: center;
-        }
-
-        #banner_paragraph {
-            color: rgba(255, 255, 255, 1);
-            font-family: 'Work Sans', sans-serif;
-            font-size: 18px;
-            font-weight: 500;
-            line-height: 28px;
-            letter-spacing: 0%;
-            text-align: center;
-        }
-
-
-
-        #btn {
-            width: 282px;
-            height: 66px;
-
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-
-            margin-top: 32px;
-        }
-
-        #banner_button {
-            background-color: rgba(82, 195, 3, 1);
-            border: none;
-            color: rgba(255, 255, 255, 1);
-            padding: 0px 18px;
-            font-size: 18px;
-            border-radius: 8px;
-        }
-
-        .about-us-container {
-            height: 671px;
-            background-color: rgb(227, 233, 233);
-            display: flex;
-
-        }
-
-        .about-us-image {
-            width: 50%;
-            height: 100%;
-
-        }
-
-        .about-us-content {
-            width: 50%;
-            height: 100%;
-
-        }
-
-
-        #about_text {
-            width: 805px;
-            height: 181px;
-
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            margin-top: 120px;
-
-
-        }
-
-
-
-        #about_sub_heading {
-            color: rgba(16, 16, 16, 1);
-
-            font-family: Work Sans;
-            font-size: 48px;
-            font-weight: 700;
-            line-height: 64px;
-            letter-spacing: 0%;
-            text-align: center;
-
-        }
-
-        #about_paragraph {
-            color: rgba(16, 16, 16, 1);
-
-            font-family: Work Sans;
-            font-size: 24px;
-            font-weight: 500;
-            line-height: 28px;
-            letter-spacing: 0%;
-            text-align: left;
-            margin-top: 24px;
-        }
-
-        #follow_text {
-            text-align: center;
-            color: rgba(16, 16, 16, 1);
-
-            font-family: Work Sans;
-            font-size: 32px;
-            font-weight: 600;
-            line-height: 38px;
-            letter-spacing: 0%;
-            text-align: center;
-            padding: 30px 0px;
-        }
-
-        #follow_container {
-            margin-top: 40px;
-        }
-
-        #social_icon {
-            width: 260.23px;
-            height: 40px;
-
-            margin: 0 auto;
-            margin-top: 32px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .card-box {
-            height: 1222px;
-            /* border: 2px solid red; */
-            /* background-color: rgb(227, 195, 153); */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-        }
-
-        .card-box-container {
-            width: 1320px;
-            height: 746px;
-            /* border: 2px solid rgb(115, 209, 38); */
-        }
-
-        .card-box-content {
-            width: 691px;
-            height: 173px;
-            /* border: 2px solid rgb(38, 38, 209); */
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        #card-box-content-paragraph {
-            color: rgba(16, 16, 16, 0.6);
-
-            font-family: Work Sans;
-            font-size: 24px;
-            font-weight: 600;
-            line-height: 28px;
-            letter-spacing: 0%;
-            text-align: center;
-        }
-
-        #card-box-content-heading {
-            color: rgba(16, 16, 16, 1);
-
-            font-family: Work Sans;
-            font-size: 48px;
-            font-weight: 700;
-            line-height: 64px;
-            letter-spacing: 0%;
-            text-align: center;
-        }
-
-        .card-box-cards {
-            width: 100%;
-            height: 525px;
-            /* border: 2px solid rgb(209, 38, 115); */
-            /* background-color: rgb(255, 250, 240); */
-            display: flex;
-            justify-content: space-around;
-            padding: 10px;
-        }
-
-        #card1 {
-            width: 424px;
-            height: 525px;
-            /* border: 2px solid rgb(38, 115, 209); */
-        }
-
-        #card1-image {
-            width: 424px;
-            height: 283px;
-            /* border: 2px solid rgb(115, 38, 209);  */
-        }
-
-        #card1-content {
-            width: 424px;
-            height: 210px;
-            /* border: 2px solid rgb(209, 115, 38); */
-            margin-top: 32px;
-            display: flex;
-            flex-direction: column;
-
-            align-items: center;
-
-        }
-
-        #card1-btn-container {
-            width: 187px;
-            height: 57px;
-          
-            display: flex;
-            justify-content: center;
-
-        }
-
-        #card1-btn {
-
-            padding: 0px 14px;
-            background-color:rgba(82, 195, 3, 0.15);
-            border: none;
-            font-size: 24px;
-            font-weight: 600;
-        }
-
-        #card1_heading {
-            color: rgba(16, 16, 16, 1);
-
-            font-family: Work Sans;
-            font-size: 40px;
-            font-weight: 600;
-            line-height: 47px;
-            letter-spacing: 0%;
-            text-align: center;
-            margin-top: 32px;
-        }
-
-        #card1_paragraph {
-            color: rgba(16, 16, 16, 1);
-            opacity: 0.7;  
-            font-family: Work Sans;
-            font-size: 18px;
-            font-weight: 500;
-            line-height: 28px;
-            letter-spacing: 0%;
-            text-align: center;
-        }
-
-        #navbar {
-            width: 1920px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            background-color: rgba(4, 4, 4, 0.5);
-            position: fixed;
-            color: white;
-            font-size: 20px;
-            font-weight: 600;
-        }
-
-        a {
-            text-decoration: none;
-            color: white;
-        }
     </style>
 </head>
 
